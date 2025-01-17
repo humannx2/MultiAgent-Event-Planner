@@ -2,8 +2,8 @@ from crewai import Agent,LLM
 from tools import search_tool,scrape_tool
 import os
 api_key=os.getenv("OPENAI_API_KEY")
-
 llm = LLM(model="groq/llama3-8b-8192", temperature=0.7, api_key=api_key)
+llm1 = LLM(model="groq/llama-3.3-70b-versatile", temperature=0.7, api_key=api_key)
 
 venue_coordinator = Agent(
     role="Venue Coordinator",
@@ -18,7 +18,7 @@ venue_coordinator = Agent(
         "the perfect venue that fits the event's theme, "
         "size, and budget constraints."
     ),
-    llm=llm
+    llm=llm1
 )
 
 logistics_manager = Agent(

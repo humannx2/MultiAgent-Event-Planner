@@ -1,5 +1,12 @@
 from agents import venue_coordinator, marketing_communications_agent, logistics_manager
 from crewai import Task
+from pydantic import BaseModel
+
+class VenueDetails(BaseModel):
+    name: str
+    address: str
+    capacity: int
+    booking_status: str
 
 venue_task = Task(
     description="Find a venue in {event_city} "
@@ -21,7 +28,7 @@ logistics_task = Task(
     expected_output="Confirmation of all logistics arrangements "
                     "including catering and equipment setup.",
     human_input=True,
-    async_execution=True, # this task will run parallel with the tasks that come after it
+    # async_execution=True, # this task will run parallel with the tasks that come after it
     agent=logistics_manager
 )
 
@@ -31,7 +38,7 @@ marketing_task = Task(
                 "{expected_participants} potential attendees.",
     expected_output="Report on marketing activities "
                     "and attendee engagement formatted as markdown.",
-    async_execution=True,
+    # async_execution=True,
     output_file="marketing_report.md",  # Outputs the report as a text file
     agent=marketing_communications_agent
 )

@@ -11,14 +11,6 @@ from pprint import pprint
 import os
 load_dotenv()
 
-from pydantic import BaseModel
-# Define a Pydantic model for venue details 
-# (demonstrating Output as Pydantic)
-class VenueDetails(BaseModel):
-    name: str
-    address: str
-    capacity: int
-    booking_status: str
 
 event_management_crew = Crew(
     agents=[venue_coordinator, 
@@ -44,9 +36,12 @@ event_details = {
     'venue_type': "Conference Hall"
 }
 
-result = event_management_crew.kickoff(inputs=event_details)
+try:
+    result = event_management_crew.kickoff(inputs=event_details)
+    with open('venue_details.json') as f:
+        data = json.load(f)
+        pprint(data)
+    # print(result)
+except Exception as e:
+    print(f"Error during execution: {e}")
 
-with open('venue_details.json') as f:
-   data = json.load(f)
-
-pprint(data)
