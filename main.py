@@ -29,10 +29,10 @@ event_details = {
     'event_description': "A gathering of tech innovators "
                          "and industry leaders "
                          "to explore future technologies.",
-    'event_city': "San Francisco",
-    'tentative_date': "2024-09-15",
+    'event_city': "India",
+    'tentative_date': "2025-12-15",
     'expected_participants': 500,
-    'budget': 20000,
+    'budget': 2000000,
     'venue_type': "Conference Hall"
 }
 

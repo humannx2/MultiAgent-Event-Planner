@@ -1,5 +1,6 @@
 from agents import venue_coordinator, marketing_communications_agent, logistics_manager
 from crewai import Task
+from tools import search_tool, scrape_tool
 from pydantic import BaseModel
 
 class VenueDetails(BaseModel):
@@ -29,7 +30,8 @@ logistics_task = Task(
                     "including catering and equipment setup.",
     human_input=True,
     # async_execution=True, # this task will run parallel with the tasks that come after it
-    agent=logistics_manager
+    agent=logistics_manager,
+    tools=[search_tool, scrape_tool]
 )
 
 marketing_task = Task(
