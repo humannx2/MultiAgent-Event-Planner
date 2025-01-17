@@ -1,5 +1,6 @@
 from crewai import Agent,LLM
 from tools import search_tool,scrape_tool
+import os
 api_key=os.getenv("OPENAI_API_KEY")
 
 llm = LLM(model="groq/llama3-8b-8192", temperature=0.7, api_key=api_key)

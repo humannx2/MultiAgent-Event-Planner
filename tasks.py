@@ -1,4 +1,5 @@
 from agents import venue_coordinator, marketing_communications_agent, logistics_manager
+from crewai import Task
 
 venue_task = Task(
     description="Find a venue in {event_city} "
