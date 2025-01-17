@@ -10,8 +10,6 @@ import json
 from pprint import pprint
 import os
 load_dotenv()
-api_key=os.getenv("OPENAI_API_KEY")
-ser_api_key=os.getenv("SERPER_API_KEY")
 
 from pydantic import BaseModel
 # Define a Pydantic model for venue details 
