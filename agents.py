@@ -35,7 +35,7 @@ logistics_manager = Agent(
         "from catering to equipment setup "
         "is flawlessly executed to create a seamless experience."
     ),
-    llm=llm
+    llm=llm1
 )
 
 marketing_communications_agent = Agent(
@@ -44,6 +44,7 @@ marketing_communications_agent = Agent(
          "communicate with participants",
     tools=[search_tool, scrape_tool],
     verbose=True,
+    async_execution=True,
     backstory=(
         "Creative and communicative, "
         "you craft compelling messages and "

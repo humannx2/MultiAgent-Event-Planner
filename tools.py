@@ -5,5 +5,5 @@ load_dotenv()
 ser_api_key=os.getenv("SERPER_API_KEY")
 
 # Initialize the tools
-search_tool = SerperDevTool(n=5)
+search_tool = SerperDevTool(n=3)
 scrape_tool = ScrapeWebsiteTool()

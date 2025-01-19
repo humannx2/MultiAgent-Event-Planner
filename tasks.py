@@ -31,7 +31,7 @@ logistics_task = Task(
     human_input=True,
     # async_execution=True, # this task will run parallel with the tasks that come after it
     agent=logistics_manager,
-    tools=[search_tool, scrape_tool]
+    tools=[search_tool]
 )
 
 marketing_task = Task(

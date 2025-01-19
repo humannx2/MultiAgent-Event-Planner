@@ -29,7 +29,7 @@ event_details = {
     'event_description': "A gathering of tech innovators "
                          "and industry leaders "
                          "to explore future technologies.",
-    'event_city': "India",
+    'event_city': "Bengaluru, India",
     'tentative_date': "2025-12-15",
     'expected_participants': 500,
     'budget': 2000000,
